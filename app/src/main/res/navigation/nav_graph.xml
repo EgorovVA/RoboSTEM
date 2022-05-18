@@ -66,6 +66,9 @@
         <action
             android:id="@+id/action_scannerActivity_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+        <action
+            android:id="@+id/action_scannerActivity_to_blankFragment5"
+            app:destination="@id/blankFragment5" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment5"
@@ -75,6 +78,21 @@
         <action
             android:id="@+id/action_blankFragment5_to_blankFragment"
             app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_blankFragment5_to_scannerActivity"
+            app:destination="@id/scannerActivity" />
+        <action
+            android:id="@+id/action_blankFragment5_to_blankFragment6"
+            app:destination="@id/blankFragment6" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment6"
+        android:name="ru.samsung.itschool.myapplication.BlankFragment6"
+        android:label="fragment6"
+        tools:layout="@layout/fragment6" >
+        <action
+            android:id="@+id/action_blankFragment6_to_blankFragment5"
+            app:destination="@id/blankFragment5" />
     </fragment>
 
 

@@ -20,6 +20,7 @@ import androidx.navigation.findNavController
 class BlankFragment5 : Fragment() {
     private var openLink: Button? = null
     private var bScanner: Button? = null
+    private var gameBscan: Button? = null
     private  var backButton: ImageButton?= null
     private var zadacha:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +35,16 @@ class BlankFragment5 : Fragment() {
         val view:View=inflater.inflate(R.layout.fragment5, container, false)
         openLink = view.findViewById(R.id.button14)
         bScanner = view.findViewById(R.id.button13)
+        gameBscan = view.findViewById(R.id.button15)
+        backButton = view.findViewById(R.id.imageButton2)
         bScanner?.setOnClickListener{
             checkCameraPermission()
         }
-        backButton = view.findViewById(R.id.imageButton2)
         backButton?.setOnClickListener{
             view.findNavController().navigate(R.id.action_blankFragment5_to_blankFragment)
+        }
+        gameBscan?.setOnClickListener{
+            view.findNavController().navigate(R.id.action_blankFragment5_to_blankFragment6)
         }
         checktext()
         return view
@@ -65,7 +70,7 @@ class BlankFragment5 : Fragment() {
                 arrayOf(Manifest.permission.CAMERA), 12)
 
         } else {
-            view?.findNavController()?.navigate(R.id.action_blankFragment5_to_blankFragment)
+            view?.findNavController()?.navigate(R.id.action_blankFragment5_to_scannerActivity)
             // startActivity(Intent(requireContext(), ScannerActivity::class.java))
         }
     }
@@ -75,7 +80,7 @@ class BlankFragment5 : Fragment() {
         val link: EditText? = view?.findViewById(R.id.Link)
         val txt:Int? =arguments?.getInt("key")
         val user = arguments?.getString("name")
-        val intent = Intent(requireContext(),BlankFragment4::class.java)
+        val intent = Intent(requireContext(),BlankFragment5::class.java)
         if (user != null) {
 
             if(txt==123456){
