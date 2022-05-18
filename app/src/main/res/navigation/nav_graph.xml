@@ -12,12 +12,17 @@
         <action
             android:id="@+id/action_blankFragment_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+
         <action
             android:id="@+id/action_blankFragment_to_blankFragment3"
             app:destination="@id/blankFragment3" />
         <action
             android:id="@+id/action_blankFragment_to_blankFragment4"
             app:destination="@id/blankFragment4" />
+        <action
+            android:id="@+id/action_blankFragment_to_blankFragment5"
+            app:destination="@id/blankFragment5" />
+
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -62,4 +67,15 @@
             android:id="@+id/action_scannerActivity_to_blankFragment2"
             app:destination="@id/blankFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/blankFragment5"
+        android:name="ru.samsung.itschool.myapplication.BlankFragment5"
+        android:label="fragment5"
+        tools:layout="@layout/fragment5" >
+        <action
+            android:id="@+id/action_blankFragment5_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+
+
 </navigation>

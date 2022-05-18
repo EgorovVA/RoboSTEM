@@ -42,7 +42,7 @@ class BlankFragment : Fragment() {
         btn8.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 if (p0 != null) {
-                    p0.findNavController().navigate(R.id.action_blankFragment_to_blankFragment2)
+                    p0.findNavController().navigate(R.id.action_blankFragment_to_blankFragment5)
                 }
             }
         })
