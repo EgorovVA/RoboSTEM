@@ -47,105 +47,76 @@ class BlankFragment6 : Fragment() {
         btn5 = view.findViewById(R.id.button21)
         btn6 = view.findViewById(R.id.button22)
         btn7 = view.findViewById(R.id.button23)
-        btn7 = view.findViewById(R.id.button24)
+        btn8 = view.findViewById(R.id.button24)
+        backButton = view.findViewById(R.id.imageButton2)
         val link: TextView? = view?.findViewById(R.id.Link2)
         if (link != null) {
             link.setElegantTextHeight(true)
             link.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE)
             link.setSingleLine(false)
         }
+        backButton = view.findViewById(R.id.imageButton)
+        backButton?.setOnClickListener{
+            view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+        }
         val num_rand = (1 until 8).random()
         btn1?.setOnClickListener{
             if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text ="Нужно делать так, как нужно. А как не нужно, делать не нужно!"
           }
         }
         btn2?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 2){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "— Ай-ай-ай, спасите-помогите! Не могу ни взад ни вперёд!"
             }
         }
         btn3?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 3){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "— Кто же это ходит за мёдом с воздушными шарами? — Я хожу!"
             }
         }
         btn4?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 4){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "— Хвост или есть, или его нет. По-моему, тут нельзя ошибиться."
             }
         }
         btn5?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 5){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "Это «ж-ж-ж» — неспроста!"
             }
         }
         btn6?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 6){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "Воздушным шаром можно кого хочешь утешить."
             }
         }
         btn7?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 7){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "А зачем тебе жужжать, если ты не пчела?"
             }
         }
         btn8?.setOnClickListener{
-            if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
+            if(num_rand == 8){
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
             }else{
                 link?.text = "Можно ничего не делать, и тогда может случится много приятностей!"
             }
         }
         return view
     }
-
-
-
-
-
-    override fun onResume() {
-        super.onResume()
-        val link: EditText? = view?.findViewById(R.id.Link)
-        val txt:Int? =arguments?.getInt("key")
-        val user = arguments?.getString("name")
-        val intent = Intent(requireContext(),BlankFragment5::class.java)
-        if (user != null) {
-
-            if(txt==123456){
-                zadacha = "http://robostem.ru/wp-content/uploads/2020/11/1-Биатлон.docx"
-                val f = Storage(user,zadacha)
-                intent.putExtra("member",f)
-            }
-            if(txt == null){
-                zadacha = null.toString()
-                val f = Storage(user,zadacha)
-                intent.putExtra("member",f)
-            }
-        }
-        if(txt==123456){
-            link?.setText("http://robostem.ru/wp-content/uploads/2020/11/1-Биатлон.docx")
-        }
-        else{
-            val nax = arguments?.getString("error")
-            link?.setText(nax)
-        }
-
-    }
-
 
 }

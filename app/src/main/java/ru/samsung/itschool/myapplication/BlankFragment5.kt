@@ -47,6 +47,8 @@ class BlankFragment5 : Fragment() {
             view.findNavController().navigate(R.id.action_blankFragment5_to_blankFragment6)
         }
         checktext()
+        val bundle = Bundle()
+        bundle.putInt("frag",5)
         return view
     }
 

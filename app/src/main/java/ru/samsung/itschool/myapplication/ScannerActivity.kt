@@ -13,7 +13,7 @@ import me.dm7.barcodescanner.zbar.ZBarScannerView
 
 class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
     private lateinit var zbView: ZBarScannerView
-
+    val fragment:Int? =arguments?.getInt("frag")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +53,14 @@ class ScannerActivity : Fragment(), ZBarScannerView.ResultHandler {
         else{
             bundle.putString("error","Гы гы гы )))) Не то")
         }
-        view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment2,bundle)
+
+        when (fragment) {
+            7 -> view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment7,bundle)
+            5 -> view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment5,bundle)
+            else -> { // Note the block
+                view?.findNavController()?.navigate(R.id.action_scannerActivity_to_blankFragment2,bundle)
+            }
+        }
+
     }
 }
