@@ -73,7 +73,7 @@ class BlankFragment5 : Fragment() {
                 arrayOf(Manifest.permission.CAMERA), 12)
 
         } else {
-            bundle.putInt("frag",5)
+            bundle.putInt("fragment",5)
             view?.findNavController()?.navigate(R.id.action_blankFragment5_to_scannerActivity,bundle)
             // startActivity(Intent(requireContext(), ScannerActivity::class.java))
         }
@@ -81,7 +81,7 @@ class BlankFragment5 : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val link: EditText? = view?.findViewById(R.id.Link)
+        val link: EditText? = view?.findViewById(R.id.Link4)
         val txt:Int? =arguments?.getInt("key")
         val user = arguments?.getString("name")
         val intent = Intent(requireContext(),BlankFragment5::class.java)
