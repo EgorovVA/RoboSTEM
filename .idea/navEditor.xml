@@ -303,6 +303,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_blankFragment7_to_scannerActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -313,8 +318,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="279" />
-                            <option name="y" value="-187" />
+                            <option name="x" value="-848" />
+                            <option name="y" value="-306" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -325,6 +330,16 @@
                               </value>
                             </entry>
                             <entry key="action_scannerActivity_to_blankFragment5">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_scannerActivity_to_blankFragment52">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_scannerActivity_to_blankFragment7">
                               <value>
                                 <LayoutPositions />
                               </value>

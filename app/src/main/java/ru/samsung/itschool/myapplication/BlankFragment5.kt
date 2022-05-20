@@ -23,6 +23,7 @@ class BlankFragment5 : Fragment() {
     private var gameBscan: Button? = null
     private  var backButton: ImageButton?= null
     private var zadacha:String = ""
+    val bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -47,8 +48,8 @@ class BlankFragment5 : Fragment() {
             view.findNavController().navigate(R.id.action_blankFragment5_to_blankFragment6)
         }
         checktext()
-        val bundle = Bundle()
-        bundle.putInt("frag",5)
+
+
         return view
     }
 
@@ -72,7 +73,8 @@ class BlankFragment5 : Fragment() {
                 arrayOf(Manifest.permission.CAMERA), 12)
 
         } else {
-            view?.findNavController()?.navigate(R.id.action_blankFragment5_to_scannerActivity)
+            bundle.putInt("frag",5)
+            view?.findNavController()?.navigate(R.id.action_blankFragment5_to_scannerActivity,bundle)
             // startActivity(Intent(requireContext(), ScannerActivity::class.java))
         }
     }

@@ -112,7 +112,7 @@
             android:id="@+id/action_blankFragment7_to_blankFragment6"
             app:destination="@id/blankFragment6" />
         <action
-            android:id="@+id/action_blankFragment7_to_scannerActivity2"
+            android:id="@+id/action_blankFragment7_to_scannerActivity"
             app:destination="@id/scannerActivity" />
     </fragment>
 

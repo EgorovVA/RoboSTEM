@@ -41,7 +41,6 @@
             android:ems="10"
             android:focusable="false"
             android:hapticFeedbackEnabled="false"
-            android:hint="Двигайся туда, опираясь только на конечности,\nнапоминающие ноги живого существа. Ваши\n стопы в ходе движения не должны быть\n выше, чем связаная с ней точка крепления."
             android:inputType="textPersonName"
             android:lineSpacingExtra="8sp"
             android:minHeight="36dp"
