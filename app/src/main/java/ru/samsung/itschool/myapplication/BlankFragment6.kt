@@ -12,17 +12,9 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.navigation.findNavController
 
-
 class BlankFragment6 : Fragment() {
-    private val hui = Bundle()
-    private var btn1: Button? = null
-    private var btn2: Button? = null
-    private var btn3: Button? = null
-    private var btn4: Button? = null
-    private var btn5: Button? = null
-    private var btn6: Button? = null
-    private var btn7: Button? = null
-    private var btn8: Button? = null
+    private val bundle = Bundle()
+
     private  var backButton: ImageButton?= null
     private var zadacha:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,95 +27,61 @@ class BlankFragment6 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view:View=inflater.inflate(R.layout.fragment6, container, false)
-        btn1 = view.findViewById(R.id.button17)
-        btn2 = view.findViewById(R.id.button18)
-        btn3 = view.findViewById(R.id.button19)
-        btn4 = view.findViewById(R.id.button20)
-        btn5 = view.findViewById(R.id.button21)
-        btn6 = view.findViewById(R.id.button22)
-        btn7 = view.findViewById(R.id.button23)
-        btn8 = view.findViewById(R.id.button24)
-        backButton = view.findViewById(R.id.imageButton2)
         val link: TextView? = view?.findViewById(R.id.Link2)
+        val num_rand: Int = (0 until 7).random()
+        backButton = view.findViewById(R.id.imageButton2)
+        backButton = view.findViewById(R.id.imageButton)
+
+        val ViniPuh_Array :Array<String> = arrayOf(
+            "Нужно делать так, как нужно. А как не нужно, делать не нужно!",
+            "— Ай-ай-ай, спасите-помогите! Не могу ни взад ни вперёд!",
+            "— Кто же это ходит за мёдом с воздушными шарами? — Я хожу!",
+            "— Хвост или есть, или его нет. По-моему, тут нельзя ошибиться.",
+            "Это «ж-ж-ж» — неспроста!",
+            "Воздушным шаром можно кого хочешь утешить.",
+            "А зачем тебе жужжать, если ты не пчела?",
+            "Можно ничего не делать, и тогда может случится много приятностей!"
+        )
+        var Button_ = arrayOf<Button?>(
+            view.findViewById(R.id.button17),
+            view.findViewById(R.id.button18),
+            view.findViewById(R.id.button19),
+            view.findViewById(R.id.button20),
+            view.findViewById(R.id.button21),
+            view.findViewById(R.id.button22),
+            view.findViewById(R.id.button23),
+            view.findViewById(R.id.button24),
+        )
         if (link != null) {
             link.setElegantTextHeight(true)
             link.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE)
             link.setSingleLine(false)
         }
-        backButton = view.findViewById(R.id.imageButton)
+
         backButton?.setOnClickListener{
             view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment5)
         }
-        val num_rand = (1 until 8).random()
-        btn1?.setOnClickListener{
 
-            if(num_rand == 1){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text ="Нужно делать так, как нужно. А как не нужно, делать не нужно!"
-          }
-        }
-        btn2?.setOnClickListener{
-            if(num_rand == 2){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "— Ай-ай-ай, спасите-помогите! Не могу ни взад ни вперёд!"
+        fun cliker(i : Int){
+            Button_[i]!!.setOnClickListener{
+                if(num_rand == i){
+                    bundle.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                    bundle.putInt("count",10)
+                    requireView().findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,bundle)
+                }
+                link?.text =ViniPuh_Array[i]
             }
         }
-        btn3?.setOnClickListener{
-            if(num_rand == 3){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "— Кто же это ходит за мёдом с воздушными шарами? — Я хожу!"
-            }
-        }
-        btn4?.setOnClickListener{
-            if(num_rand == 4){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "— Хвост или есть, или его нет. По-моему, тут нельзя ошибиться."
-            }
-        }
-        btn5?.setOnClickListener{
-            if(num_rand == 5){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "Это «ж-ж-ж» — неспроста!"
-            }
-        }
-        btn6?.setOnClickListener{
-            if(num_rand == 6){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "Воздушным шаром можно кого хочешь утешить."
-            }
-        }
-        btn7?.setOnClickListener{
-            if(num_rand == 7){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "А зачем тебе жужжать, если ты не пчела?"
-            }
-        }
-        btn8?.setOnClickListener{
-            if(num_rand == 8){
-                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
-            }else{
-                link?.text = "Можно ничего не делать, и тогда может случится много приятностей!"
-            }
+
+        for(i in 0 .. Button_.size-1){
+            cliker(i)
         }
         return view
     }
-    override fun onResume() {
-        super.onResume()
-        hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
+
 }
