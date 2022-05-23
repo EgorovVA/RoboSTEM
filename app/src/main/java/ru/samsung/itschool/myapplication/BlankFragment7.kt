@@ -75,6 +75,7 @@ class BlankFragment7 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val pidoor = arguments?.getString("LALIPOP")
         val view:View=inflater.inflate(R.layout.fragment7, container, false)
         openLink = view.findViewById(R.id.button5)
         bScanner = view.findViewById(R.id.button25)
@@ -106,6 +107,7 @@ class BlankFragment7 : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        val pidoor = arguments?.getString("LALIPOP")
         val intent = Intent(requireContext(),BlankFragment7::class.java)
         val link: EditText? = view?.findViewById(R.id.Link3)
         val link1: TextView? = view?.findViewById(R.id.Link2)

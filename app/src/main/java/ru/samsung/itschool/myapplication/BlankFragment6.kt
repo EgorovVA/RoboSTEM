@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 
 
 class BlankFragment6 : Fragment() {
+    private val hui = Bundle()
     private var btn1: Button? = null
     private var btn2: Button? = null
     private var btn3: Button? = null
@@ -55,62 +56,74 @@ class BlankFragment6 : Fragment() {
         }
         val num_rand = (1 until 8).random()
         btn1?.setOnClickListener{
+
             if(num_rand == 1){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text ="Нужно делать так, как нужно. А как не нужно, делать не нужно!"
           }
         }
         btn2?.setOnClickListener{
             if(num_rand == 2){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "— Ай-ай-ай, спасите-помогите! Не могу ни взад ни вперёд!"
             }
         }
         btn3?.setOnClickListener{
             if(num_rand == 3){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "— Кто же это ходит за мёдом с воздушными шарами? — Я хожу!"
             }
         }
         btn4?.setOnClickListener{
             if(num_rand == 4){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "— Хвост или есть, или его нет. По-моему, тут нельзя ошибиться."
             }
         }
         btn5?.setOnClickListener{
             if(num_rand == 5){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "Это «ж-ж-ж» — неспроста!"
             }
         }
         btn6?.setOnClickListener{
             if(num_rand == 6){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "Воздушным шаром можно кого хочешь утешить."
             }
         }
         btn7?.setOnClickListener{
             if(num_rand == 7){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "А зачем тебе жужжать, если ты не пчела?"
             }
         }
         btn8?.setOnClickListener{
             if(num_rand == 8){
-                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7)
+                hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+                view.findNavController().navigate(R.id.action_blankFragment6_to_blankFragment7,hui)
             }else{
                 link?.text = "Можно ничего не делать, и тогда может случится много приятностей!"
             }
         }
         return view
     }
-
+    override fun onResume() {
+        super.onResume()
+        hui.putString("LALIPOP","пИДРИЛА оБОССАНЫЙ")
+    }
 }
